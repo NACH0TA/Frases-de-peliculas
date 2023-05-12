@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block body %}
+<center>
+    <h1>TRIVIA DE PELICULAS</h1>
+    <h2>
+        <form action="{{url_for('trivia_page')}}" method="post">
+            <input required type="text" name="username">
+            <button type="submit">INICIAR JUEGO</button>
+        </form>
+    </h2>
+    <h2>
+        <a href="{{url_for('score_page')}}">SCORE</a>
+    </h2>
+</center>
+{% endblock %}

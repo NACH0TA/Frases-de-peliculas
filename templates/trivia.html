@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Trivia Page
+{% endblock %}
+
+{% block body %}
+<center>
+    <h1>{{msg}}</h1>
+    <h1>{{msg2}}</h1>
+    <h2>
+        {{frase}}
+    </h2>
+    <form action="{{url_for(ruta)}}" method="post">
+        {% for i in range(3) %}
+        <h3>
+            {{opciones_dict[i+1]}}
+            <input required type={{tipo}} name="opcion" value="{{opciones_dict[i+1]}}" id="">
+        </h3>
+        {% endfor %}
+        <input type="hidden" name="contador" value="{{contador+1}}">
+        <input type="hidden" name="username" value="{{username}}">
+        <input type="hidden" name="opcion_correcta" value="{{opcion_correcta}}">
+        <input type="hidden" name="score" value="{{score}}">
+        <p>{{contador}}/5   score = {{score}}</p>
+        <button type="submit">{{next_exit}}</button>
+    </form>
+</center>
+{% endblock %}
