@@ -77,3 +77,6 @@ def score_page():
     
     a = len(usernames)
     return render_template("score.html", usernames=usernames, scores=scores, a=a)
+
+if __name__ == "__main__":
+    app.run(debug=True)
